@@ -17,10 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: MKMapView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         viewSetting()
-        // Do any additional setup after loading the view.
+        
+        let locationManager = LocationManager()
+        locationManager.enableLocationServices()
+        
+        
     }
     
     func viewSetting() {
@@ -28,9 +31,6 @@ class ViewController: UIViewController {
         webView.isZoomEnabled = true
     }
     
-}
-
-class MainMap {
     
 }
 
