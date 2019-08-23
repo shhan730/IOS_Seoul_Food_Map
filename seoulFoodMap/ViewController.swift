@@ -13,16 +13,14 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    let locationManager = LocationManager()
 
     @IBOutlet weak var webView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
-        
-        let locationManager = LocationManager()
         locationManager.enableLocationServices()
-        
         
     }
     

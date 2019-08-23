@@ -17,16 +17,9 @@ class LocationManager {
         //locationManager.delegate
         
         switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            requestLoation()
-            break
             
-        case .restricted, .denied:
-            requestLoation()
-            break
-            
-        case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
+        case .restricted, .denied, .authorizedWhenInUse, .notDetermined:
+            requestLotation()
             break
             
         case .authorizedAlways:
@@ -37,8 +30,7 @@ class LocationManager {
         }
     }
     
-    func requestLoation() {
-        locationManager.requestWhenInUseAuthorization()
+    func requestLotation() {
         locationManager.requestAlwaysAuthorization()
     }
     

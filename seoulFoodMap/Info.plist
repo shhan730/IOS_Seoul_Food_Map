@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Locaton Needed Always to Use This App</string>
+	<string>이 앱을 정상적으로 사용하시려면 위치정보사용동의를 항상사용으로 해주시기 바랍니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location Needed</string>
 	<key>CFBundleDevelopmentRegion</key>
