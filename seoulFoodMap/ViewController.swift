@@ -8,27 +8,36 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
 
 class ViewController: UIViewController {
 
-    let locationManager = LocationManager()
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
 
-    @IBOutlet weak var webView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+        
+        mapView.showsUserLocation = true
         viewSetting()
-        locationManager.enableLocationServices()
+//        locationManager.enableLocationServices()
+        
         
     }
     
     func viewSetting() {
-        webView.mapType = .standard
-        webView.isZoomEnabled = true
+        mapView.mapType = .standard
+        mapView.isZoomEnabled = true
+        mapView.isPitchEnabled = true
+        
     }
     
     
 }
-

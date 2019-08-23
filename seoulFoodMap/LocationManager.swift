@@ -13,6 +13,10 @@ class LocationManager {
     
     let locationManager = CLLocationManager()
     
+    var currentLocation: CLLocation!
+    
+    // Requesting Location Access to User
+    
     func enableLocationServices() {
         //locationManager.delegate
         
@@ -33,6 +37,31 @@ class LocationManager {
     func requestLotation() {
         locationManager.requestAlwaysAuthorization()
     }
+    
+    // Get Location Info
+    
+    func startReceivingSignificantLocationChanges() {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if authorizationStatus != .authorizedAlways {
+            // User has not authorized access to location information.
+            return
+        }
+        
+        if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
+            // The service is not available.
+            return
+        }
+        //locationManager.delegate = self
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
+        let lastLocation = locations.last!
+        
+        currentLocation = lastLocation
+    }
+    
+    
     
 }
     

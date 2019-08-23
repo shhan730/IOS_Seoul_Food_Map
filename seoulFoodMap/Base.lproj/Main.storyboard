@@ -19,12 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="shq-rw-Aio">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nSF-HQ-jHI"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="shq-rw-Aio" secondAttribute="bottom" constant="50" id="HKE-iy-xGO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="shq-rw-Aio" secondAttribute="bottom" id="HKE-iy-xGO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="shq-rw-Aio" secondAttribute="trailing" id="j6J-TW-9FX"/>
                             <constraint firstItem="shq-rw-Aio" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lmC-zN-ZaC"/>
                             <constraint firstItem="shq-rw-Aio" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sKh-Wr-KdC"/>
@@ -32,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="shq-rw-Aio" id="8kn-X5-8bS"/>
+                        <outlet property="mapView" destination="shq-rw-Aio" id="8kn-X5-8bS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
