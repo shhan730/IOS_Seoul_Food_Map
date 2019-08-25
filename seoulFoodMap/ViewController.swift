@@ -79,6 +79,7 @@ extension ViewController: CLLocationManagerDelegate {
         print("status changed")
         if status == .authorizedAlways || status == .authorizedWhenInUse{
             beginLocationUpdate(locationManager: manager)
+            
         }
     }
     
